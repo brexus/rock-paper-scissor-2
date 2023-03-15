@@ -154,7 +154,7 @@ h3 {
 /* =========================== HISTORY ================================= */
 
 .history-container {
-    height: 150px;
+    min-height: 150px;
     display: flex;
     flex-direction: column;
     /* justify-content: center; */
@@ -168,27 +168,19 @@ h3 {
     flex-direction: row;
     align-items: center;
     justify-content: center;
+    overflow:hidden;
 }
 
 .history-section-item {
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content:flex-start;
     align-items: center;
     /* border: 1px solid red; */
     min-width: 350px;
-   
 }
-.history-section-item > p{
-    overflow:hidden;
-    height: 100%;
-    z-index: -100;
-}
-.history-section-item > p > *{
-    overflow:hidden;
-    height: 100%;
-    z-index: -101;
-}
+
+
 
 p {
     font-size: 0.8rem;
