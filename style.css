@@ -1,0 +1,213 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;600;700;800&display=swap');
+@import url('https://fonts.cdnfonts.com/css/cubano');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap');
+@import url('https://fonts.cdnfonts.com/css/sofia-pro?styles=17636,17630,17640,17632,17634,17638,17628,17626');
+
+* {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    background: linear-gradient(rgb(0, 0, 0), rgb(31, 35, 37));
+    color: #b2becd;
+    font-family: 'Sofia Pro', sans-serif;
+}
+
+.main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.navbar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    min-height: 120px;
+    margin-top: 25px;
+}
+
+.marked {
+    background-color: #EAB308;
+}
+
+.unmarked {
+    background-color: rgb(31, 35, 37);
+}
+
+h1 {
+    font-weight: 900;
+    font-size: 2.8rem;
+    font-family: 'Sofia Pro', sans-serif;
+    color: white;
+}
+
+h2 {
+    font-size: 2rem;
+    font-weight: 300;
+}
+
+.game-section {
+    flex: 1;
+}
+
+.choice-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem 0;
+}
+
+.title {
+    color: #EAB308;
+}
+
+.choice-section {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    min-width: 1050px;
+    padding-top: 2rem;
+}
+
+.choice-section-item {
+    width: 200px;
+    height: 200px;
+    /* background-color: rgb(18,24,27); */
+
+    /* border: 1px solid red; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* border: 7px solid rgb(52, 52, 65); */
+    border-radius: 100%;
+    margin: 0 10px;
+    cursor: pointer;
+}
+
+.choice-section-item:hover {
+    scale: 1.05;
+    /* background-color: #ecc757; */
+}
+
+.choice-section-item:active {
+    scale: 1.08;
+}
+
+
+.rock-paper-scissor-img {
+    height: 100px;
+}
+
+/* =========================== DUEL ================================= */
+
+.duel-container {
+    width: 100%;
+    padding-top: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.duel-section {
+    min-width: 600px;
+    height: 200px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+h3 {
+    font-size: 2rem;
+}
+
+.duel-section-item {
+    /* border: 1px solid red; */
+    height: 250px;
+    flex: 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.duel-section-result {
+    /* border: 1px solid red; */
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.duel-margin {
+    margin-top: 20px;
+}
+
+/* =========================== HISTORY ================================= */
+
+.history-container {
+    height: 150px;
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center; */
+    align-items: center;
+    margin-top: 2rem;
+    margin-bottom: 3rem;
+}
+
+.history-section {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.history-section-item {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    /* border: 1px solid red; */
+    min-width: 350px;
+   
+}
+.history-section-item > p{
+    overflow:hidden;
+    height: 100%;
+    z-index: -100;
+}
+.history-section-item > p > *{
+    overflow:hidden;
+    height: 100%;
+    z-index: -101;
+}
+
+p {
+    font-size: 0.8rem;
+    font-weight: 300;
+}
+
+.history-section-item-p {
+    font-size: 1.2rem;
+}
+
+.main-margin {
+    
+}
+
+/* =========================== FOOTER ================================= */
+
+footer {
+    min-height: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
