@@ -157,10 +157,10 @@ h3 {
     min-height: 150px;
     display: flex;
     flex-direction: column;
-    /* justify-content: center; */
+    justify-content: flex-start;
     align-items: center;
-    margin-top: 2rem;
-    margin-bottom: 3rem;
+    padding-top: 2rem;
+    /* margin-bottom: 3rem; */
 }
 
 .history-section {
@@ -168,7 +168,7 @@ h3 {
     flex-direction: row;
     align-items: center;
     justify-content: center;
-    overflow:hidden;
+    /* overflow: hidden; */
 }
 
 .history-section-item {
@@ -180,8 +180,6 @@ h3 {
     min-width: 350px;
 }
 
-
-
 p {
     font-size: 0.8rem;
     font-weight: 300;
@@ -191,14 +189,10 @@ p {
     font-size: 1.2rem;
 }
 
-.main-margin {
-    
-}
-
 /* =========================== FOOTER ================================= */
 
 footer {
-    min-height: 80px;
+    min-height: 50px;
     display: flex;
     justify-content: center;
     align-items: center;
