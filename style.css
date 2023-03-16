@@ -234,15 +234,15 @@ footer {
 
 }
 
-.low-opacity {
-    opacity: 0.1;
+.game-over-background {
+    opacity: 0.3;
+    filter: blur(5px);
 }
 
 
 .game-over-window > h2 {
     font-weight: 900;
     font-size: 2.8rem;
-    color: white;
 }
 
 .game-over-window > p {
