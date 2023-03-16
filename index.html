@@ -10,20 +10,16 @@
     <link rel="shortcut icon" href="./img/paper.png" type="image/x-icon">
 </head>
 <body>
+<div class="finish-window">
+
+</div>    
 <div class="main">
-    <div class="navbar"> 
+    
+    <div class="navbar margin"> 
         <h1>ROCK, PAPER & SCISSOR GAME!</h1> 
     </div>
     <div class="game-section">
-        <div class="choice-container">
-            <h2 class="title">YOUR CHOICE:</h2>
-            <div class="choice-section">
-                <div class="choice-section-item unmarked" data-element-id="1"><img src="./img/rock.png" alt="" class="rock-paper-scissor-img"></div>
-                <div class="choice-section-item unmarked" data-element-id="1"><img src="./img/paper.png" alt="" class="rock-paper-scissor-img"></div>
-                <div class="choice-section-item unmarked" data-element-id="1"><img src="./img/scissor.png" alt="" class="rock-paper-scissor-img"></div>
-            </div>
-        </div>
-        <div class="duel-container">
+        <div class="duel-container margin">
             <h2 class="title">DUEL:</h2>
             <div class="duel-section">
                 <div class="duel-section-item">
@@ -39,33 +35,44 @@
                 </div>
             </div>
         </div>
-        <div class="history-container">
+
+        <div class="choice-container margin">
+            <h2 class="title">YOUR CHOICE:</h2>
+            <div class="choice-section">
+                <div class="choice-section-item unmarked" data-element-id="1"><img src="./img/rock.png" alt="" class="rock-paper-scissor-img"></div>
+                <div class="choice-section-item unmarked" data-element-id="1"><img src="./img/paper.png" alt="" class="rock-paper-scissor-img"></div>
+                <div class="choice-section-item unmarked" data-element-id="1"><img src="./img/scissor.png" alt="" class="rock-paper-scissor-img"></div>
+            </div>
+        </div>
+
+        <div class="history-container margin">
             <h2 class="title">HISTORY:</h2>
             
             <div class="history-section">
                 <div class="history-section-item">
                     <h2>PLAYER:</h2>
-                    <p data-history="1"></p>
+                    <p data-history="1" class="p-margin"></p>
 
                 </div>
                 <div class="history-section-item">
                     <h2>COMPUTER:</h2>
-                    <p data-history="2"></p>
+                    <p data-history="2" class="p-margin"></p>
                 </div>
             </div>
         </div>
     </div>
 
-    <footer>
+    <footer class="margin">
         <p>Created by brexus ©️ | Odin Project 2023</p>
     </footer>
 
+</div>
     <script>
 
         getPlayerChoice();
 
     </script>
     
-</div>
+
 </body>
 </html>

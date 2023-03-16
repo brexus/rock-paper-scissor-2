@@ -12,6 +12,9 @@ body {
     background: linear-gradient(rgb(0, 0, 0), rgb(31, 35, 37));
     color: #b2becd;
     font-family: 'Sofia Pro', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .main {
@@ -22,13 +25,16 @@ body {
     min-height: 100vh;
 }
 
+.margin {
+    margin-top: 2rem;
+}
+
 .navbar {
     display: flex;
     justify-content: center;
     align-items: center;
     width: 100%;
-    min-height: 120px;
-    margin-top: 25px;
+    flex-wrap: wrap;
 }
 
 .marked {
@@ -52,7 +58,8 @@ h2 {
 }
 
 .game-section {
-    flex: 1;
+    flex: 2;
+    width: 100%;
 }
 
 .choice-container {
@@ -60,7 +67,6 @@ h2 {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding: 2rem 0;
 }
 
 .title {
@@ -73,14 +79,13 @@ h2 {
     justify-content: center;
     align-items: center;
     min-width: 1050px;
-    padding-top: 2rem;
+    padding-top: 1rem;
 }
 
 .choice-section-item {
-    width: 200px;
-    height: 200px;
+    width: 150px;
+    height: 150px;
     /* background-color: rgb(18,24,27); */
-
     /* border: 1px solid red; */
     display: flex;
     justify-content: center;
@@ -100,25 +105,27 @@ h2 {
     scale: 1.08;
 }
 
-
 .rock-paper-scissor-img {
-    height: 100px;
+    height: 90px;
 }
 
 /* =========================== DUEL ================================= */
 
 .duel-container {
     width: 100%;
-    padding-top: 2rem;
+    padding: rem 0;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    /* background-color: rgb(106, 142, 209); */
+    /* background-color:#aaa5a5 ; */
+
 }
 
 .duel-section {
-    min-width: 600px;
-    height: 200px;
+    min-width: 500px;
+    height: 150px;
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -137,6 +144,7 @@ h3 {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+
 }
 
 .duel-section-result {
@@ -154,12 +162,12 @@ h3 {
 /* =========================== HISTORY ================================= */
 
 .history-container {
-    min-height: 150px;
+    /* min-height: 150px; */
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
-    padding-top: 2rem;
+    /* margin-top: 3rem; */
     /* margin-bottom: 3rem; */
 }
 
@@ -168,7 +176,7 @@ h3 {
     flex-direction: row;
     align-items: center;
     justify-content: center;
-    /* overflow: hidden; */
+    /* overflow: scroll; */
 }
 
 .history-section-item {
@@ -177,7 +185,7 @@ h3 {
     justify-content:flex-start;
     align-items: center;
     /* border: 1px solid red; */
-    min-width: 350px;
+    min-width: 300px;
 }
 
 p {
@@ -189,6 +197,10 @@ p {
     font-size: 1.2rem;
 }
 
+.p-margin {
+    margin-top: 1rem;
+}
+
 /* =========================== FOOTER ================================= */
 
 footer {
@@ -196,4 +208,25 @@ footer {
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.finish-window {
+    position: fixed;
+    z-index: 1;
+    width: 400px;
+    height: 200px;
+    background-color: #474747;
+    /* border: 2px solid ; */
+    border-radius: 30px;
+    transform: translate(-50%, -50%) scale(0);
+    
+}
+
+.active {
+    transform: translate(-50%, -50%) scale(1);
+
+}
+
+.low-opacity {
+    opacity: 0.4;
 }
