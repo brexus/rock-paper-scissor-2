@@ -210,7 +210,10 @@ footer {
     align-items: center;
 }
 
-.finish-window {
+
+/* =========================== END WINDOW ================================= */
+
+.end-window {
     position: fixed;
     z-index: 1;
     width: 400px;
@@ -218,15 +221,52 @@ footer {
     background-color: #474747;
     /* border: 2px solid ; */
     border-radius: 30px;
-    transform: translate(-50%, -50%) scale(0);
-    
+    /* transform: translate(-50%, -50%) scale(0); */
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
 }
 
 .active {
-    transform: translate(-50%, -50%) scale(1);
+    display: flex;
 
 }
 
 .low-opacity {
-    opacity: 0.4;
+    opacity: 0.1;
+}
+
+
+.end-window > h2 {
+    font-weight: 900;
+    font-size: 2.8rem;
+    color: white;
+}
+
+.end-window > p {
+    font-weight: 500;
+    font-size: 1.2rem;
+}
+
+.end-window > button {
+    background-color: #EAB308;
+    border: 0;
+    border-radius: 25px;
+    width: 240px;
+    height: 50px;
+    font-weight: 900;
+    font-size: 1.4rem;
+    margin-top: 10px;
+    color: white;
+}
+
+.end-window > button:hover {
+    scale: 1.03;
+    cursor: pointer;
+}
+
+.end-window > button:active {
+    scale: 1.05;
 }

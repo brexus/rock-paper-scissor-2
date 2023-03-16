@@ -61,12 +61,15 @@ function playRound(playerChoice, compChoice) {
         updateHistory(playerChoice, compChoice);
 
     } else {
-        // document.querySelector("finish-window").classList.add('active');
-        // document.querySelector("main").classList.add('low-opacity');
+        showEndWindow();
     }
-
-
 }
+
+function showEndWindow() {
+    document.getElementsByClassName("end-window")[0].classList.add("active");
+    document.getElementsByClassName("main")[0].classList.add("low-opacity");
+}
+
 
 function updateScore(playerChoice, compChoice) {
     document.getElementById("h3-result").innerHTML = `${playerScore}:${compScore}`;
