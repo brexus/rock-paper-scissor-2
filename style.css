@@ -14,7 +14,7 @@ body {
     font-family: 'Sofia Pro', sans-serif;
     display: flex;
     justify-content: center;
-    align-items: center;
+    /* align-items: center; */
 }
 
 .main {
@@ -226,12 +226,11 @@ footer {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-
+    top: 40%;
 }
 
 .active {
     display: flex;
-
 }
 
 .game-over-background {
