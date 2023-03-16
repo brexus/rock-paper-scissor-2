@@ -76,7 +76,7 @@ function playRound(playerChoice, compChoice) {
 
 function showGameOverWindow(whoLastWon) {
     document.getElementsByClassName("game-over-window")[0].classList.add("active");
-    document.getElementsByClassName("main")[0].classList.add("low-opacity");
+    document.getElementsByClassName("main")[0].classList.add("game-over-background");
     let play_again_result = document.querySelector('[data-game-over="1"]');
     let play_again_button = document.querySelector('[data-game-over="2"]');
     console.log(play_again_button);
@@ -93,7 +93,7 @@ function showGameOverWindow(whoLastWon) {
         whoLastWon = null;
         updateScore();
         document.getElementsByClassName("game-over-window")[0].classList.remove("active");
-        document.getElementsByClassName("main")[0].classList.remove("low-opacity");
+        document.getElementsByClassName("main")[0].classList.remove("game-over-background");
 
         const rps_buttons = document.querySelectorAll('[data-element-id="1"]');
         for (let j = 0; j < 3; j++) {
