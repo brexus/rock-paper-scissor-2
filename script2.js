@@ -1,5 +1,6 @@
 let playerScore = 0;
 let compScore = 0;
+let whoLastWon;
 
 function getPlayerChoice() {
     const rps_buttons = document.querySelectorAll('[data-element-id="1"]');
@@ -17,6 +18,8 @@ function getPlayerChoice() {
             rps_buttons[i].classList.add("marked");
             compChoice = getComputerChoice();
             playRound(i, compChoice);
+            
+
         });
     }
 
@@ -39,39 +42,72 @@ function playRound(playerChoice, compChoice) {
         } else if (playerChoice == 0 && compChoice == 1) {
             compScore++;
             console.log("You lose! Paper beats rock");
+            whoLastWon = 'comp';
         } else if (playerChoice == 0 && compChoice == 2) {
             playerScore++;
             console.log("You win! Rock beats scissor");
+            whoLastWon = 'player';
         } else if (playerChoice == 1 && compChoice == 0) {
             playerScore++;
             console.log("You win! Paper beats rock");
+            whoLastWon = 'player';
         } else if (playerChoice == 1 && compChoice == 2) {
             compScore++;
             console.log("You lose! Scissor beats paper");
+            whoLastWon = 'comp';
         } else if (playerChoice == 2 && compChoice == 0) {
             compScore++;
             console.log("You lose! Rock beats scissor");
+            whoLastWon = 'comp';
         } else if (playerChoice == 2 && compChoice == 1) {
             playerScore++;
             console.log("You win! Scissor beats paper");
+            whoLastWon = 'player';
         } else console.log("error");
 
-        updateScore(playerChoice, compChoice);
+        updateScore();
         updateDuelImg(playerChoice, compChoice);
         updateHistory(playerChoice, compChoice);
 
     } else {
-        showEndWindow();
+        showGameOverWindow(whoLastWon);
     }
 }
 
-function showEndWindow() {
-    document.getElementsByClassName("end-window")[0].classList.add("active");
+function showGameOverWindow(whoLastWon) {
+    document.getElementsByClassName("game-over-window")[0].classList.add("active");
     document.getElementsByClassName("main")[0].classList.add("low-opacity");
+    let play_again_result = document.querySelector('[data-game-over="1"]');
+    let play_again_button = document.querySelector('[data-game-over="2"]');
+    console.log(play_again_button);
+
+    if(whoLastWon == 'comp'){
+        play_again_result.textContent = "YOU LOST!"
+    } else if(whoLastWon == 'player') {
+        play_again_result.textContent = "YOU WIN!"
+    }
+
+    play_again_button.addEventListener('click', function(e) {
+        playerScore = 0;
+        compScore = 0;
+        whoLastWon = null;
+        updateScore();
+        document.getElementsByClassName("game-over-window")[0].classList.remove("active");
+        document.getElementsByClassName("main")[0].classList.remove("low-opacity");
+
+        const rps_buttons = document.querySelectorAll('[data-element-id="1"]');
+        for (let j = 0; j < 3; j++) {
+            rps_buttons[j].classList.remove("marked");
+            rps_buttons[j].classList.add("unmarked");
+        }
+    });
+
 }
 
 
-function updateScore(playerChoice, compChoice) {
+
+
+function updateScore() {
     document.getElementById("h3-result").innerHTML = `${playerScore}:${compScore}`;
 }
 
