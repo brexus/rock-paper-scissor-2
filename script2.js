@@ -6,28 +6,24 @@ function getPlayerChoice() {
     const rps_buttons = document.querySelectorAll('[data-element-id="1"]');
     let compChoice;
 
-        // document.querySelector("finish-window").classList.remove("active");
-        // document.querySelector("main").classList.remove("low-opacity");
     for (let i = 0; i < 3; i++) {
         rps_buttons[i].addEventListener('click', function(e) {
-            for (let j = 0; j < 3; j++) {
-                rps_buttons[j].classList.remove("marked");
-                rps_buttons[j].classList.add("unmarked");
-            }
+            unMarkButtons(rps_buttons);
             rps_buttons[i].classList.remove("unmarked");
             rps_buttons[i].classList.add("marked");
             compChoice = getComputerChoice();
             playRound(i, compChoice);
             
-
         });
     }
-
-    // document.getElementsByClassName("finish-window").classList.add("active");
-    // document.getElementsByClassName("main").classList.add("low-opacity");
 }
 
-
+function unMarkButtons(rps_buttons) {
+    for (let j = 0; j < 3; j++) {
+        rps_buttons[j].classList.remove("marked");
+        rps_buttons[j].classList.add("unmarked");
+    }
+}
 
 function getComputerChoice() {
     let compChoice = Math.floor(Math.random() * 3);
@@ -69,6 +65,10 @@ function playRound(playerChoice, compChoice) {
         updateDuelImg(playerChoice, compChoice);
         updateHistory(playerChoice, compChoice);
 
+        if(compScore == 5 || playerScore == 5) {
+            showGameOverWindow(whoLastWon);
+        }
+
     } else {
         showGameOverWindow(whoLastWon);
     }
@@ -88,22 +88,29 @@ function showGameOverWindow(whoLastWon) {
     }
 
     play_again_button.addEventListener('click', function(e) {
-        playerScore = 0;
-        compScore = 0;
-        whoLastWon = null;
-        updateScore();
-        document.getElementsByClassName("game-over-window")[0].classList.remove("active");
-        document.getElementsByClassName("main")[0].classList.remove("game-over-background");
-
-        const rps_buttons = document.querySelectorAll('[data-element-id="1"]');
-        for (let j = 0; j < 3; j++) {
-            rps_buttons[j].classList.remove("marked");
-            rps_buttons[j].classList.add("unmarked");
-        }
+        resetGame();
     });
 
 }
 
+function resetGame() {
+    playerScore = 0;
+    compScore = 0;
+    whoLastWon = null;
+    updateScore();
+    document.getElementsByClassName("game-over-window")[0].classList.remove("active");
+    document.getElementsByClassName("main")[0].classList.remove("game-over-background");
+
+    const rps_buttons = document.querySelectorAll('[data-element-id="1"]');
+    unMarkButtons(rps_buttons);
+    setDefaultChoiceImg();
+}
+
+function setDefaultChoiceImg() {
+    let imgs = document.getElementsByClassName("rock-paper-scissor-img");
+    imgs[0].src = "./img/mark.png";
+    imgs[1].src = "./img/mark.png";
+}
 
 
 
