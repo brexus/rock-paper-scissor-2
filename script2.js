@@ -13,7 +13,6 @@ function getPlayerChoice() {
             markOneButton(rps_buttons[i]);
             compChoice = getComputerChoice();
             playRound(i, compChoice);
-            
         });
     }
 }
@@ -34,7 +33,6 @@ function getComputerChoice() {
     let compChoice = Math.floor(Math.random() * 3);
     return compChoice;
 }
-
 
 function playRound(playerChoice, compChoice) {
     if (playerScore < 5 && compScore < 5){
@@ -109,6 +107,7 @@ function resetGame() {
     const rps_buttons = document.querySelectorAll('[data-element-id="1"]');
     unMarkButtons(rps_buttons);
     setDefaultChoiceImg();
+    clearHistory();
 }
 
 function setDefaultChoiceImg() {
@@ -170,3 +169,8 @@ function updateHistory(playerChoice, compChoice) {
     document.querySelector('[data-history="2"]').appendChild(history_comp_element);
 }
 
+function clearHistory() {
+    document.getElementsByClassName("history-section-item")[0].removeChild(document.querySelector('[data-history="1"]'));
+    document.getElementsByClassName("history-section-item")[1].removeChild(document.querySelector('[data-history="2"]'));
+
+}
