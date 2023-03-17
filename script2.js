@@ -2,6 +2,7 @@ let playerScore = 0;
 let compScore = 0;
 let whoLastWon;
 
+
 function getPlayerChoice() {
     const rps_buttons = document.querySelectorAll('[data-element-id="1"]');
     let compChoice;
@@ -9,8 +10,7 @@ function getPlayerChoice() {
     for (let i = 0; i < 3; i++) {
         rps_buttons[i].addEventListener('click', function(e) {
             unMarkButtons(rps_buttons);
-            rps_buttons[i].classList.remove("unmarked");
-            rps_buttons[i].classList.add("marked");
+            markOneButton(rps_buttons[i]);
             compChoice = getComputerChoice();
             playRound(i, compChoice);
             
@@ -23,6 +23,11 @@ function unMarkButtons(rps_buttons) {
         rps_buttons[j].classList.remove("marked");
         rps_buttons[j].classList.add("unmarked");
     }
+}
+
+function markOneButton(button) {
+    button.classList.remove("unmarked");
+    button.classList.add("marked");
 }
 
 function getComputerChoice() {
